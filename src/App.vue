@@ -1,26 +1,46 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="backgroundSettings">
+    <navbar-header
+    :pages="pages"
+    ></navbar-header>
+    <h1 class="header"> Hi! I'm Meherzan Gai!</h1>
+    <p>Click around to find out more about me</p>
+
+  </div>
+
+  <router-view></router-view>
+  
 </template>
 
+
+
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import NavbarHeader from './components/NavbarHeader.vue';
+
 
 export default {
-  name: 'App',
+
   components: {
-    HelloWorld
+    NavbarHeader,
+  },
+  data () {
+    return{
+      pages: [
+        {
+          link: {
+            text: "About",
+            url: 'about.html',
+          }
+        }
+      ]
+    }
+
   }
+  
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
+
 </style>
